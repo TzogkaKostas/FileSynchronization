@@ -1,0 +1,13 @@
+int send_input_dir_and_its_content(int fd, char *log_file, char *input_dir, int pipe_size);
+int send_name_length(int fd, char *name_length);
+int send_name(int fd, char *name);
+int send_entry_size(int fifo_fd, char *entry_name);
+int send_indication_bit(int fifo_fd, int indication_bit);
+void send_file(int fd, char *name, int pipe_size);
+void send_termination_message(int fifo_fd);
+int write_to_pipe(int fd, void *buffer, int length);
+int fits_in_2_bytes(int x);
+int get_entry_size(char *entry_name);
+int get_entry_size_by_fd(int fd);
+int cur_first_part_of_the_path(char *path, char *new_path);
+int read_from_file(int fd, void *buffer,int length);
